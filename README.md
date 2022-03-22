@@ -1,6 +1,5 @@
 # Perfect PlayLsit
-Put here a short paragraph describing your project. 
-Adding an screenshot or a mockup of your application in action would be nice.  
+The Perfect Playlist is for Spotify user, who are seeking new music to listen to in a more absract way. It'll allow the user to input an image and based off that image, it'll generate a recommended playlist. 
 
 ![This is a screenshot.](images.png)
 # How to run
