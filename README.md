@@ -8,21 +8,21 @@ Provide here instructions on how to use your application.
 - Download the latest binary from the Release section on the right on GitHub.  
 - On the command line uncompress using
 ```
-tar -xzf  
+tar -xzf PerfectPlaylist-0.1.0
 ```
 - On the command line run with
 ```
-./hello
+python ./perfect_playlist.py
 ```
-- You will see Hello World! on your terminal. 
+- You will see Hello Temple! on your terminal. 
 
 # How to contribute
 Follow this project board to know the latest status of the project: [http://...]([http://...])  
 
 ### How to build
-- Use this github repository: ... 
-- Specify what branch to use for a more stable release or for cutting edge development.  
-- Use InteliJ 11
+- Use this github repository: https://github.com/cis3296s22/PerfectPlaylist/tree/hello-world 
+- Specify what branch to use for a more stable release or for cutting edge development: use hello-world branch for runnable build.
+- Use python 3
 - Specify additional library to download if needed 
 - What file and target to compile and run. 
-- What is expected to happen when the app start. 
+- What is expected to happen when the app start.
