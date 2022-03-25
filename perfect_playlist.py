@@ -8,6 +8,8 @@ __author__ = "Emma Dunsinger, Matthew O'Mara, Evan Noyes, Tommy Ngo"
 __version__ = "0.1.0"
 __license__ = "N/A"
 
+import imageio
+import time
 import requests
 import argparse
 import os
@@ -201,4 +203,10 @@ def print_output(json_response):
 
 if __name__ == "__main__":
     hello()
+<<<<<<< HEAD
     input('press ENTER to exit')
+=======
+
+    img = imageio.imread("images.png")
+
+>>>>>>> 71fce8832dca76971a79a2ee7071eb17a1b2b4aa
