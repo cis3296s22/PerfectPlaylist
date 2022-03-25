@@ -201,3 +201,4 @@ def print_output(json_response):
 
 if __name__ == "__main__":
     hello()
+    input('press ENTER to exit')
