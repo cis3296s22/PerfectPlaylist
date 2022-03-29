@@ -41,8 +41,7 @@ def call_api():
     #     print(key, ' BOOBS ', value)
 
 if __name__ == "__main__":
+    input('press ENTER to start')
     call_api()
-    input('press ENTER to exit')
-
+    input('press enter to exit')
     img = imageio.imread("images.png")
-
