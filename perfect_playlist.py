@@ -51,7 +51,7 @@ def call_api():
 
 
 if __name__ == "__main__":
+    img = imageio.imread("images.png")
     input('press ENTER to start')
     call_api()
     input('press enter to exit')
-    img = imageio.imread("images.png")
