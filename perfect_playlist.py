@@ -38,7 +38,7 @@ def call_api():
 
     # print(items["name"])
     # for key, value in results.items():
-    #     print(key, ' BOOBS ', value)
+    #     print(key, ' : ', value)
 
 if __name__ == "__main__":
     input('press ENTER to start')
