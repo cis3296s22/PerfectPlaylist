@@ -22,7 +22,7 @@ first run: pip install -r requirements.txt in your shell.
 
 then start the program with: python ./perfect_playlist.py
 ```
-- the user will be presented with the playlist query results in json format. 
+- the user will be presented with the playlist in song - artist - album format. 
 
 # How to contribute
 Follow this project board to know the latest status of the project: [Trello](https://trello.com/b/zeHItZVV/perfectplaylist)  
