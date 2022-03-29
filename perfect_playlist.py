@@ -29,16 +29,26 @@ def call_api():
     auth_manager = SpotifyClientCredentials()
     sp = spotipy.Spotify(auth_manager=auth_manager)
 
-    results = sp.playlist_items('spotify:user:spotifycharts:playlist:37i9dQZEVXbMDoHDwVN2tF')
+    results = sp.playlist('spotify:user:spotifycharts:playlist:37i9dQZEVXbMDoHDwVN2tF')
     # print(json.dumps(results, indent=4))
 
     # print(results.keys())
-    items = results.get('items')
-    print(json.dumps(items, indent=4))
+    # items = results.get('items')
+    # print(json.dumps(items, indent=4))
 
     # print(items["name"])
     # for key, value in results.items():
     #     print(key, ' : ', value)
+    print("\nSong - Artist - Album\n")
+
+    for item in results['tracks']['items']:
+            print(
+            item['track']['name'] + ' - ' +
+            item['track']['artists'][0]['name'] + ' - ' +
+            item['track']['album']['name']
+            )
+
+
 
 if __name__ == "__main__":
     input('press ENTER to start')
