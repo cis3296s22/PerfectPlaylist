@@ -3,11 +3,10 @@ The Perfect Playlist is for Spotify user, who are seeking new music to listen to
 
 ![This is a screenshot.](perfect_play.png)
 # How to run
-```
-- Download the latest binary from the Release section on the right on GitHub.  
-  See releases tag https://github.com/cis3296s22/PerfectPlaylist/releases/tag/0.1.1
-```
- 
+
+## Download the latest binary from the Release section on the right on GitHub.  
+- See releases tag https://github.com/cis3296s22/PerfectPlaylist/releases/tag/0.1.1
+
 - On the command line uncompress using
 ```
 *Only follow this step if installing direclty from source.
