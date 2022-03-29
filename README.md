@@ -1,4 +1,4 @@
-# Perfect PlayLsit
+# Perfect PlayList
 The Perfect Playlist is for Spotify user, who are seeking new music to listen to in a more absract way. It'll allow the user to input an image and based off that image, it'll generate a recommended playlist. 
 
 ![This is a screenshot.](perfect_play.png)
