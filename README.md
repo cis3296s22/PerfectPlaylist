@@ -25,7 +25,7 @@ then start the program with: python ./perfect_playlist.py
 - the user will be presented with the playlist query results in json format. 
 
 # How to contribute
-Follow this project board to know the latest status of the project: [Trello]([https://trello.com/b/zeHItZVV/perfectplaylist)  
+Follow this project board to know the latest status of the project: [Trello](https://trello.com/b/zeHItZVV/perfectplaylist)  
 
 ### How to build
 - Use this github repository: [Github](https://github.com/cis3296s22/PerfectPlaylist/tree/hello-world) 
