@@ -78,7 +78,7 @@ def get_song():
     for i, song in enumerate(possible_songs):
         song_list_str += f'{i+1}. {song["name"]} by {song["artists"][0]["name"]}\n'
     song_selection = input(f'\n{song_list_str}\n\nEnter the number of the song you want to add: ')
-    //TO BE COMPLETED
+    #TO BE COMPLETED
 
 if __name__ == "__main__":
     img = imageio.imread("images.png")
