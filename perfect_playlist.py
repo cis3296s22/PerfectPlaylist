@@ -21,6 +21,9 @@ SPOTIPY_CLIENT_ID='9f4d5ba1da544502a6bdb038d16cf067'
 SPOTIPY_CLIENT_SECRET='f54225b24200404baca25763718bd7c8'
 SPOTIPY_REDIRECT_URI='http://localhost:8888/callback'
 
+#username for the test account
+username = '31jvmeu7rifvdpcuitposjgjtz7i'
+
 def get_top50():
     sp = get_spotify_client()
     results = sp.playlist('spotify:user:spotifycharts:playlist:37i9dQZEVXbMDoHDwVN2tF')
@@ -35,6 +38,14 @@ def get_top50():
     print("\n### END OF TOP 50 PLAYLIST ### \n")
 
 
+def create_playlist(playlistName):
+    user = user_auth()
+    user.user_playlist_create(username, playlistName)
+
+def user_auth():
+    sp = get_spotify_client()
+    token = spotipy.prompt_for_user_token(username, scope = 'playlist-modify-private, playlist-modify-public', client_id = SPOTIPY_CLIENT_ID, client_secret = SPOTIPY_CLIENT_SECRET, redirect_uri = SPOTIPY_REDIRECT_URI)
+    return spotipy.Spotify(auth=token)
 
 def get_spotify_client() -> spotipy.Spotify:
     """
@@ -56,7 +67,7 @@ def setup_env_vars():
 def get_song():
     songName = input("Type in a song title to search:  ")
     sp = get_spotify_client()
-
+    
     results = sp.search(q = songName, type='track', limit=5)
     possible_songs = results.get('tracks').get('items')
 
@@ -70,12 +81,11 @@ def get_song():
     print(f'[option={int(song_selection)}, query="{songName}"]')
     print(f'>>>\n>>> {selected_song["name"]} by {selected_song["artists"][0]["name"]}\n>>>\n')
 
-
-
     #TO BE COMPLETED
 
 if __name__ == "__main__":
     ##img = imageio.imread("images.png")
+    create_playlist('testplaylist')
     input('press ENTER to start\n')
 
     ## START of get_top50 (formerly call_api)
