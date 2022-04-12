@@ -23,7 +23,9 @@ SPOTIPY_CLIENT_SECRET='f54225b24200404baca25763718bd7c8'
 SPOTIPY_REDIRECT_URI='http://localhost:8888/callback'
 
 #username for the test account
-username = '31jvmeu7rifvdpcuitposjgjtz7i'
+#username = '31jvmeu7rifvdpcuitposjgjtz7i'
+
+username = input("Enter Username:")
 
 def get_top50():
     sp = get_spotify_client()
@@ -49,30 +51,30 @@ def user_auth():
     token = spotipy.prompt_for_user_token(username, scope = 'playlist-modify-private, playlist-modify-public', client_id = SPOTIPY_CLIENT_ID, client_secret = SPOTIPY_CLIENT_SECRET, redirect_uri = SPOTIPY_REDIRECT_URI)
     return spotipy.Spotify(auth=token)
 
-@staticmethod
-def loginCallback(request_handler, code):
-    url = 'https://accounts.spotify.com/api/token'
-    authorization = base64.standard_b64encode(SPOTIPY_CLIENT_ID + ':' + SPOTIPY_CLIENT_SECRET)
+# @staticmethod
+# def loginCallback(request_handler, code):
+#     url = 'https://accounts.spotify.com/api/token'
+#     authorization = base64.standard_b64encode(SPOTIPY_CLIENT_ID + ':' + SPOTIPY_CLIENT_SECRET)
 
-    headers = {
-        'Authorization' : 'Basic ' + authorization
-        } 
-    data  = {
-        'grant_type' : 'authorization_code',
-        'code' : code,
-        'redirect_uri' : Spotify.redirect_uri
-        } 
+#     headers = {
+#         'Authorization' : 'Basic ' + authorization
+#         } 
+#     data  = {
+#         'grant_type' : 'authorization_code',
+#         'code' : code,
+#         'redirect_uri' : Spotify.redirect_uri
+#         } 
 
-    data_encoded = urllib.urlencode(data)
-    req = urllib2.Request(url, data_encoded, headers)
+#     data_encoded = urllib.urlencode(data)
+#     req = urllib2.Request(url, data_encoded, headers)
 
-    try:
-        response = urllib2.urlopen(req, timeout=30).read()
-        response_dict = json.loads(response)
-        Spotify.saveLoginCallback(request_handler, response_dict)
-        return
-    except urllib2.HTTPError as e:
-        return e
+#     try:
+#         response = urllib2.urlopen(req, timeout=30).read()
+#         response_dict = json.loads(response)
+#         Spotify.saveLoginCallback(request_handler, response_dict)
+#         return
+#     except urllib2.HTTPError as e:
+#         return e
 
 def get_spotify_client() -> spotipy.Spotify:
     """
