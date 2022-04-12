@@ -13,6 +13,7 @@ import spotipy
 import os
 import json
 import typer
+from urllib.request import urlopen
 
 from spotipy.oauth2 import SpotifyClientCredentials
 
@@ -47,6 +48,31 @@ def user_auth():
     sp = get_spotify_client()
     token = spotipy.prompt_for_user_token(username, scope = 'playlist-modify-private, playlist-modify-public', client_id = SPOTIPY_CLIENT_ID, client_secret = SPOTIPY_CLIENT_SECRET, redirect_uri = SPOTIPY_REDIRECT_URI)
     return spotipy.Spotify(auth=token)
+
+@staticmethod
+def loginCallback(request_handler, code):
+    url = 'https://accounts.spotify.com/api/token'
+    authorization = base64.standard_b64encode(SPOTIPY_CLIENT_ID + ':' + SPOTIPY_CLIENT_SECRET)
+
+    headers = {
+        'Authorization' : 'Basic ' + authorization
+        } 
+    data  = {
+        'grant_type' : 'authorization_code',
+        'code' : code,
+        'redirect_uri' : Spotify.redirect_uri
+        } 
+
+    data_encoded = urllib.urlencode(data)
+    req = urllib2.Request(url, data_encoded, headers)
+
+    try:
+        response = urllib2.urlopen(req, timeout=30).read()
+        response_dict = json.loads(response)
+        Spotify.saveLoginCallback(request_handler, response_dict)
+        return
+    except urllib2.HTTPError as e:
+        return e
 
 def get_spotify_client() -> spotipy.Spotify:
     """
