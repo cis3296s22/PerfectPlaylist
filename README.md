@@ -3,37 +3,16 @@ The Perfect Playlist is for Spotify user, who are seeking new music to listen to
 
 # How to run
 
-## Download the latest binary from the Release section on the right on GitHub.  
-- See releases tag https://github.com/cis3296s22/PerfectPlaylist/releases/tag/0.1.2
+- To run the executable, after navigating to the directory containing it run the command ```./perfect_playlist``` 
 
-- On the command line uncompress using
-```
-*Only follow this step if installing direclty from source.
-tar -xzf PerfectPlaylist-0.1.1
-```
-- On the command line run with
-```
-clone the repository and cd into the project directory
+- To run the program from source code, after downloading and uncompressing the zip or tar.gz file navigate into the main directory and first run the command ```pip install -r requirements.txt``` to install the requirements. Then run ```python perfect_playlist.py```
 
-- It is recomended to test inside a virtual envronment to avoid global python packages installs
-
-first run: pip install -r requirements.txt in your shell.
-
-then start the program with: python ./perfect_playlist.py
-```
 - the user can type in the name of a playlist to create and a string to search songs for, and the playlist will be created with the song added.
 
 - the created playlist can be found here: https://open.spotify.com/user/31jvmeu7rifvdpcuitposjgjtz7i
 
+## Download the latest binary from the Release section on the right on GitHub.  
+- See releases tag https://github.com/cis3296s22/PerfectPlaylist/releases/tag/0.1.3
+
 # How to contribute
 Follow this project board to know the latest status of the project: [Trello](https://trello.com/b/zeHItZVV/perfectplaylist)  
-
-### How to build
-- Use this github repository: [Github](https://github.com/cis3296s22/PerfectPlaylist/tree/hello-world) 
-- Specify what branch to use for a more stable release or for cutting edge development: use hello-world branch for runnable build.
-- Use python 3
-- must install imageio and spotipy packages this ca be done by folloing the command line install instructions
-- What file and target to compile and run. 
-- The when the program starts the user is prompted to hit enter, 
-  the user will be presented with the playlist query results in json format, 
-  the user will be asked to hit enter to exit the program.
