@@ -40,7 +40,8 @@ def get_top50():
 
 def create_playlist(playlistName):
     user = user_auth()
-    user.user_playlist_create(username, playlistName)
+    playlist = user.user_playlist_create(username, playlistName)
+    return playlist["id"]
 
 def user_auth():
     sp = get_spotify_client()
@@ -80,21 +81,29 @@ def get_song():
     selected_song = possible_songs[int(song_selection)-1]
     print(f'[option={int(song_selection)}, query="{songName}"]')
     print(f'>>>\n>>> {selected_song["name"]} by {selected_song["artists"][0]["name"]}\n>>>\n')
-
+    
     #TO BE COMPLETED
+    return selected_song["id"]
+
+def add_song(playlist_id, song_id):
+    user = user_auth()
+    user.user_playlist_add_tracks(user=username, playlist_id=playlist_id, tracks=[song_id])
+
 
 if __name__ == "__main__":
     ##img = imageio.imread("images.png")
-    create_playlist('testplaylist')
-    input('press ENTER to start\n')
+    playlistName = input("Enter a playlist name to create:")
+    playlist_id = create_playlist(playlistName)
+    
+    #input('press ENTER to start\n')
 
     ## START of get_top50 (formerly call_api)
     '''
     get_top50()
     '''
     ## START of get song
-    get_song()
+    song_id = get_song()
 
-
+    add_song(playlist_id, song_id)
 
     input('press enter to exit')
