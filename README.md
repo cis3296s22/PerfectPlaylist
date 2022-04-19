@@ -37,7 +37,7 @@ then start the program with: python ./perfect_playlist.py
 ![picture of shell window](pics/1.png?raw=true "enter user name")
 
 ## Your default browser window will open and prompt you for your email and password if you are not already logged into your spotify account.
-### Depending on your browser settings you may be prompted to log in or grant permission
+- Depending on your browser settings you may be prompted to log in or grant permission
 #### *All password and account credentials are handled by your browser.*
 ![spotify login form](pics/2.png?raw=true "spotify login")
 
@@ -51,12 +51,12 @@ then start the program with: python ./perfect_playlist.py
 ## To add tracks to the playlist select option 4 and you will be prompted for the name of the playlist you would like to add songs to here we select our 'test' playlist
 ![picture of CLI](pics/6.png?raw=true "select playlist to add track")
 
-## Enter the name of the song you woudl like to add
-### If more than one result is returned you will be given the option to select a desired track
+- Enter the name of the song you woudl like to add
+- If more than one result is returned you will be given the option to select a desired track
 ![picture of CLI](pics/7.png?raw=true "select playlist to add track")
 
 ## Go to your spotify app and see that your song has been added to your playlist
-### To add more tracks simply follow the prompts as before
+- To add more tracks simply follow the prompts as before
 ![picture of CLI](pics/8.png?raw=true "select playlist to add track")
 
 
